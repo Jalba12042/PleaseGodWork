@@ -18,15 +18,6 @@ public class MemoryScript : MonoBehaviour
         
     }
 
-    private void onTriggerEnter (Collision collision)
-    {
-        if(collision.gameObject.CompareTag("mem"))
-        {
-            Destroy(collision.gameObject);
-            pauseScreen.incrementMem();
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("mem"))
