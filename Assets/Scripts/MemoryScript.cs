@@ -6,6 +6,9 @@ public class MemoryScript : MonoBehaviour
 {
     [SerializeField] PauseScreen pauseScreen;
 
+    public Transform container;
+    public GameObject memFab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class MemoryScript : MonoBehaviour
         {
             Destroy(other.gameObject);
             pauseScreen.incrementMem();
+            Instantiate(memFab, container);
         }
     }
 }
