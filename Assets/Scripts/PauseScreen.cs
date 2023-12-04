@@ -24,12 +24,14 @@ public class PauseScreen : MonoBehaviour
         {
             //enable canvas
             CanvasObject.GetComponent<Canvas>().enabled = true;
+            Time.timeScale = 0;
         }
         //if press escape and canvas is true
         else if (Input.GetKeyDown(KeyCode.Escape) && (CanvasObject.GetComponent<Canvas>().enabled == true))
         {
             //disable canvas
             CanvasObject.GetComponent<Canvas>().enabled = false;
+            Time.timeScale = 1;
         }
     }
 
