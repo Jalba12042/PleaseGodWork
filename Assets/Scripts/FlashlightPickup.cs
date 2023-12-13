@@ -6,6 +6,9 @@ public class FlashlightPickup : MonoBehaviour
     public Light flashlight; // The flashlight's Light component
     public KeyCode toggleKey = KeyCode.F; // Key to toggle the flashlight
 
+    //public Transform camTransform;//camera's transform
+    //public Transform flashlightTransform;
+
     private bool isPickedUp = false;
     private bool isFlashlightOn = false;
 
@@ -21,6 +24,14 @@ public class FlashlightPickup : MonoBehaviour
         {
             ToggleFlashlight();
         }
+
+        
+        ////get current rotation of obj
+        //Vector3 currentRotation = flashlightTransform.eulerAngles;
+        ////get rotation of camera
+        //float zRot = camTransform.rotation.z;
+        //currentRotation.z += zRot;
+        //flashlightTransform.eulerAngles = currentRotation;
     }
 
     private void OnTriggerEnter(Collider other)
