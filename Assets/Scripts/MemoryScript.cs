@@ -10,6 +10,8 @@ public class MemoryScript : MonoBehaviour
     public Transform container;
     public GameObject memFab;
 
+    public PopUp PopUp;
+    public float timer = 10;
     
 
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class MemoryScript : MonoBehaviour
         {
             Destroy(other.gameObject);
             pauseScreen.incrementMem();
+            PopUp.playPopup();
 
             GameObject newUIThing = Instantiate(memFab, container);
             newUIThing.GetComponent<memoryInfo>().SetMessage(pickedUpMemory.memoryText);
