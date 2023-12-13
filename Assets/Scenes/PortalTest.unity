@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04e50cf7091c584caafe722aaeafa45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fpsPlayer: {fileID: 0}
   player: {fileID: 34632203}
   reciever: {fileID: 1259252155}
 --- !u!65 &11847565
@@ -181,7 +182,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 0, z: 3}
+  m_Size: {x: 2, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &34632203 stripped
 Transform:
@@ -839,6 +840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04e50cf7091c584caafe722aaeafa45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fpsPlayer: {fileID: 0}
   player: {fileID: 34632203}
   reciever: {fileID: 11847563}
 --- !u!65 &1259252157
@@ -852,7 +854,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 0, z: 3}
+  m_Size: {x: 2, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1290132681 stripped
 Transform:

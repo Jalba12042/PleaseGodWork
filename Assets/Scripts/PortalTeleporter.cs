@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class PortalTeleporter : MonoBehaviour
 {
-
+    public SC_FPSController fpsPlayer;
     public Transform player;
     public Transform reciever;
 
     private bool playerIsOverlapping = false;
+
+    private void Start()
+    {
+        fpsPlayer = FindObjectOfType<SC_FPSController>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,30 +28,41 @@ public class PortalTeleporter : MonoBehaviour
             {
                 // Teleport him!
                 float rotationDiff = -Quaternion.Angle(transform.rotation, reciever.rotation);
-                rotationDiff += 180;
+                //rotationDiff += 180;
                 player.Rotate(Vector3.up, rotationDiff);
 
                 Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
                 player.position = reciever.position + positionOffset;
 
                 playerIsOverlapping = false;
+
+              fpsPlayer.teleLastSentTo = reciever;
             }
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (transform == fpsPlayer.teleLastSentTo)
+            return;
+
+            if (other.tag == "Player")
         {
             playerIsOverlapping = true;
+            Debug.Log("ENTER");
         }
     }
 
     void OnTriggerExit(Collider other)
     {
+        if (transform == fpsPlayer.teleLastSentTo)
+            fpsPlayer.teleLastSentTo = null;
+
+
         if (other.tag == "Player")
         {
             playerIsOverlapping = false;
+            Debug.Log("EXIT");
         }
     }
 }
