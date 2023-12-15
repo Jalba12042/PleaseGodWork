@@ -16,7 +16,7 @@ public class PauseScreen : MonoBehaviour
     }
 
     void Update()
-    {
+    {    
         text.text = "Memories Collected: " + memAmount;
 
         //if press escape and canvas is false
